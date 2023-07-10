@@ -77,6 +77,12 @@ export default function Players({data}: Props) {
           }
           className="max-w-sm"
         />
+        <Button
+            variant="outline" className="ml-auto text-black"
+            onClick={() => window.location.reload()}
+          >
+            Reload
+          </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="outline" className="ml-auto text-black">

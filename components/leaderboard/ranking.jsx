@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Players from "@/components/leaderboard/players";
+import { Progress } from "../ui/progress";
 
 function timeSince(date) {
   const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
@@ -11,11 +12,14 @@ function timeSince(date) {
 
 export default function Ranking({ leaderboard }) {
   const [jugadores, setJugadores] = useState([]);
+  const [progreso, setProgreso] = useState(0);
 
   useEffect(() => {
     let newLeaderboard = [];
+    const progresoIndiv = Math.floor(100 / leaderboard.length);
     async function getData() {
       for (let player of leaderboard) {
+        setProgreso((progreso) => progreso + progresoIndiv);
         const id = player.userID;
         const res = await fetch(`/api/read-battles`, {
           method: "POST",
@@ -36,7 +40,6 @@ export default function Ranking({ leaderboard }) {
                 axie2: data.second_client_fighters[1].axie_id,
                 axie3: data.second_client_fighters[2].axie_id,
               };
-        console.log(place);
         newLeaderboard.push({
           ...player,
           lastBattle: timeSince(new Date(data.ended_time * 1000)),
@@ -58,7 +61,10 @@ export default function Ranking({ leaderboard }) {
         {jugadores.length > 0 ? (
           <Players data={jugadores} />
         ) : (
-          <p>Loading top 100...</p>
+          <>
+            <p className="mt-4 mb-2">Loading Top 100...</p>
+            <Progress value={progreso} className="w-[60%]" />
+          </>
         )}
       </ul>
     </>
