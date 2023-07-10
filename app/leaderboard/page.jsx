@@ -26,7 +26,6 @@ export default async function Leaderboard() {
 
   return (
     <div>
-      <h1>Leaderboard</h1>
       <Ranking leaderboard={leaderboard} />
     </div>
   );

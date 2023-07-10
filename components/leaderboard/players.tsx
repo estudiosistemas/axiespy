@@ -79,7 +79,7 @@ export default function Players({data}: Props) {
         />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
+            <Button variant="outline" className="ml-auto text-black">
               Columns <ChevronDown className="ml-2 h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
@@ -159,7 +159,7 @@ export default function Players({data}: Props) {
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div> */}
-        <div className="space-x-2">
+        <div className="space-x-2 text-black">
           <Button
             variant="outline"
             size="sm"

@@ -53,6 +53,7 @@ export default function Ranking({ leaderboard }) {
 
   return (
     <>
+      <h1 className="text-xl font-bold tracking-tight">Leaderboard</h1>
       <ul className="pt-5">
         {jugadores.length > 0 ? (
           <Players data={jugadores} />
