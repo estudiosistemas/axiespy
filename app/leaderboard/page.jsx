@@ -22,7 +22,7 @@ async function getLeaderBoard(cant, desde) {
 }
 
 export default async function Leaderboard() {
-  const leaderboard = await getLeaderBoard(10, 0);
+  const leaderboard = await getLeaderBoard(100, 0);
 
   return (
     <div>
