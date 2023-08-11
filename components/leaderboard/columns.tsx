@@ -14,7 +14,6 @@ import {
     ColumnDef, createColumnHelper,
 
   } from "@tanstack/react-table"
-import Image from "next/image"
 
 
 export type Jugador = {
@@ -87,7 +86,7 @@ export const columns: ColumnDef<Jugador>[] = [
         columnHelper.accessor('axie1', {
           header: () => '',
           cell: props => (
-            <Image src={`https://axiecdn.axieinfinity.com/axies/${props.getValue()}/axie/axie-full-transparent.png`} alt="background image" height={80} width={80} className="w-20"/>
+            <img src={`https://axiecdn.axieinfinity.com/axies/${props.getValue()}/axie/axie-full-transparent.png`} alt="background image" height={80} width={80} className="w-20"/>
           ),
           footer: props => props.column.id,
         }),
@@ -95,7 +94,7 @@ export const columns: ColumnDef<Jugador>[] = [
         columnHelper.accessor('axie2', {
           header: '',
           cell: props => (
-            <Image src={`https://axiecdn.axieinfinity.com/axies/${props.getValue()}/axie/axie-full-transparent.png`} alt="background image" height={80} width={80} className="w-20"/>
+            <img src={`https://axiecdn.axieinfinity.com/axies/${props.getValue()}/axie/axie-full-transparent.png`} alt="background image" height={80} width={80} className="w-20"/>
           ),
           footer: props => props.column.id,
         }),
@@ -103,7 +102,7 @@ export const columns: ColumnDef<Jugador>[] = [
         columnHelper.accessor('axie3', {
           header: '',
           cell: props => (
-            <Image src={`https://axiecdn.axieinfinity.com/axies/${props.getValue()}/axie/axie-full-transparent.png`} alt="background image" height={80} width={80} className="w-20"/>
+            <img src={`https://axiecdn.axieinfinity.com/axies/${props.getValue()}/axie/axie-full-transparent.png`} alt="background image" height={80} width={80} className="w-20"/>
           ),
           footer: props => props.column.id,
         }),
